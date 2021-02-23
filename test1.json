@@ -1,5 +1,5 @@
-"Userinfo" : [
-{"id": "1","name": "Ken","email": "ken@test.com"},
-{"id": "2","name": "en","email": "en@test.com"},  
-{"id": "3","name": "n","email": "n@test.com"}  
-]
+"UserInfo" : [
+          { "id" : 1,  "name" : "samurai1", "like-lang" : "php" },
+          { "id" : 2,  "name" : "samurai2", "like-lang" : "javascript"},
+          { "id" : 3,  "name" : "samurai3", "like-lang" : "ruby" }
+       ]
