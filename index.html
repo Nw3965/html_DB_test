@@ -9,7 +9,10 @@
   <script language="javascript" type="text/javascript">
 
     for(let i = 1; i < 4; i++){
-      url = `https://github.com/Nw3965/html_DB_test/blob/main/test${i}.json`;
+      url = "https://github.com/Nw3965/html_DB_test/blob/main/test${i}.json";
+      
+      //    for(let i = 1; i < 4; i++){
+      //url = `https://github.com/Nw3965/html_DB_test/blob/main/test${i}.json`;
 
       $.getJSON(url, (data) => {
         console.log(`id=${data.id}, name=${data.name}, email=${data.email}`);
