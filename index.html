@@ -1,38 +1,23 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>sample</title>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript">
 
-   <head>
-	
-      <script type="text/javascript">
-		
-         var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
-         var msg;
-			
-         db.transaction(function (tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
-            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "XXXX")');
-            tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "www.google.com")');
-            msg = '<p>Tanaka，Tokyo</p>';
-            document.querySelector('#status').innerHTML =  msg;
-         });
+    for(let i = 1; i < 4; i++){
+      url = `test${i}.json`;
 
-         db.transaction(function (tx) {
-            tx.executeSql('SELECT * FROM LOGS', [], function (tx, results) {
-               var len = results.rows.length, i;
-               msg = "<p>FFFFF5645233: " + len + "</p>";
-               document.querySelector('#status').innerHTML +=  msg;
-					
-               for (i = 0; i < len; i++){
-                  msg = "<p><b>" + results.rows.item(i).log + "</b></p>";
-                  document.querySelector('#status').innerHTML +=  msg;
-               }
-            }, null);
-         });
-			
-      </script>
-		
-   </head>
-	
+      $.getJSON(url, (data) => {
+        console.log(`id=${data.id}, name=${data.name}, email=${data.email}`);
+      });
+    }
+  </script>
+</body>
+</html>
    <body>
       <div id="status" name="status">YYYXXX</div>
    </body>
